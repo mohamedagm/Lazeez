@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lazeez/core/utils/app_router.dart';
 
 void main() {
   runApp(const LazeezApp());
@@ -9,12 +10,9 @@ class LazeezApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Lazeez App!'),
-        ),
-      ),
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: AppRouter.router,
     );
   }
 }
