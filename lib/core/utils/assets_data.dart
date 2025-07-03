@@ -1,3 +1,3 @@
 abstract class AssetsData {
-  static const logo = 'assets/images/Logo.svg';
+  static const logo = 'assets/images/logo.svg';
 }
