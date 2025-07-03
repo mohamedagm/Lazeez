@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lazeez/core/styles.dart';
 import 'package:lazeez/core/utils/assets_data.dart';
 import 'package:lazeez/core/utils/constants.dart';
@@ -20,9 +21,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   void initState() {
-    //  animation + Navigate to onBoarding
     initializeAnimation();
-
+    navigateToBoarding();
     super.initState();
   }
 
@@ -74,5 +74,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
       end: Colors.black,
     ).animate(animationController);
     animationController.forward();
+  }
+
+  void navigateToBoarding() {
+    Future.delayed(const Duration(seconds: 4), () {
+      if (!mounted) return;
+      GoRouter.of(context).push('/onboardingView');
+    });
   }
 }
