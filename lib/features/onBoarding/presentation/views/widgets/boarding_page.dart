@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:lazeez/core/styles.dart';
+import 'package:lazeez/features/onBoarding/data/model/onboarding_model.dart';
 
 class BoardingPage extends StatelessWidget {
-  const BoardingPage({
-    super.key,
-    required this.imageLink,
-    required this.title,
-    required this.content,
-  });
-  final String imageLink;
-  final String title;
-  final String content;
+  const BoardingPage({super.key, required this.model});
+  final OnboardingModel model;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,16 +13,16 @@ class BoardingPage extends StatelessWidget {
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.6,
           width: double.infinity,
-          child: Image.asset(imageLink),
+          child: Image.asset(model.imageLink),
         ),
         Text(
-          title,
+          model.title,
           style: Styles.onBoardingStyle30,
           textAlign: TextAlign.center,
         ),
         SizedBox(height: 15),
         Text(
-          content,
+          model.content,
           style: Styles.onBoardingStyle22,
           textAlign: TextAlign.center,
         ),
